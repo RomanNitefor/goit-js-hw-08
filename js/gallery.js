@@ -73,17 +73,9 @@ images.forEach(image => {
 
 gallery.innerHTML = pictures;
 
-// Скасовуємо скачку при кліку
-const galleryLinks = document.querySelectorAll('.gallery-link');
-
-galleryLinks.forEach(link => {
-  link.addEventListener('click', function (event) {
-    event.preventDefault();
-  });
-});
-
 // Додаємо слухача
 gallery.addEventListener('click', function (event) {
+  event.preventDefault();
   if (event.target.tagName === 'IMG') {
     const linkUrl = event.target.dataset.source;
 
